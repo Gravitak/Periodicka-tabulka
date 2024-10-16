@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, 80px); /* Pevná šířka každého sloupce */
+    grid-auto-rows: 100px; /* Pevná výška každého řádku */
+    gap: 5px;
+    max-width: 1600px;
+    margin: 50px auto 0 auto;
+    justify-items: stretch;
+    align-items: start;
+}
+
+.element {
+    border: 1px solid #ccc;
+    width: 80px; /* Pevná šířka každé buňky */
+    height: 100px; /* Pevná výška každé buňky */
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Zabrání přesahu textu */
+    word-wrap: break-word; /* Zalamování dlouhých slov */
+    text-align: center; /* Zarovnání textu na střed */
+    flex-shrink: 0; /* Zabrání zmenšení buňky */
+}
+
+.element .symbol {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.element .number {
+    font-size: 0.8em;
+}
+
+.element .name {
+    font-size: 0.9em;
+}
+
+/* Barvy podle kategorií */
+.solid {
+    background-color: #f4c242;
+}
+
+.liquid {
+    background-color: #70b8f1;
+}
+
+.gas {
+    background-color: #f19898;
+}
+
+.unknown {
+    background-color: #cccccc;
+}
+
+.alkali {
+    background-color: #ffddcc;
+}
+
+.alkaline {
+    background-color: #ffffcc;
+}
+
+.transition {
+    background-color: #ffcc80;
+}
+
+.lanthanoid {
+    background-color: #ff99cc;
+}
+
+.actinoid {
+    background-color: #ff99ff;
+}
+
+.metalloid {
+    background-color: #99cccc;
+}
+
+.nonmetal {
+    background-color: #ccffcc;
+}
+
+.halogen {
+    background-color: #ccccff;
+}
+
+.noble {
+    background-color: #ffccff;
+}
+
+/* Responzivní nastavení */
+@media (max-width: 768px) {
+    .periodic-table {
+        grid-template-columns: repeat(8, 80px); /* Pevný počet sloupců pro menší obrazovky */
+    }
+
+    .element {
+        font-size: 10px;
+        width: 80px; /* Pevná šířka pro mobilní zařízení */
+        height: 100px; /* Pevná výška pro mobilní zařízení */
+    }
+}
+
+@media (min-width: 1600px) {
+    .periodic-table {
+        grid-template-columns: repeat(18, 80px); /* Pevná šířka sloupců na velkých obrazovkách */
+    }
+
+    .element {
+        font-size: 14px;
+        width: 80px; /* Pevná šířka */
+        height: 100px; /* Pevná výška */
+    }
+}
